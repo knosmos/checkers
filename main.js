@@ -252,6 +252,7 @@ function move(val,x,y){
         }
     }
     updateBoard();
+    sendUpdate();
     removeElementsByClass("ghost");
 }
 
@@ -266,10 +267,10 @@ function capture(piece,val){
     removeElementsByClass("ghost");
     justCaptured = prefix+piece;
     console.log(justCaptured);
+    sendUpdate();
     if (getCaptures(justCaptured).length==0){
         justCaptured = -1;
         console.log("no jump");
-        sendUpdate();
         nextTurn();
     }
 }
