@@ -1,5 +1,5 @@
 // sends a request to server and returns the result.
-server_url = 'http://127.0.0.1:5000/';
+server_url = 'http://bottlecap-checkers.herokuapp.com/';
 
 /*function sendPost(url,data){
     return fetch(server_url+url, {method: "POST", body: JSON.stringify(data)});
