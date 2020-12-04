@@ -269,6 +269,7 @@ function capture(piece,val){
     if (getCaptures(justCaptured).length==0){
         justCaptured = -1;
         console.log("no jump");
+        sendUpdate();
         nextTurn();
     }
 }
@@ -344,7 +345,7 @@ function checkWin(){
         }
     }
     if (redWin && !blueWin){
-        document.getElementById('turn').innerHTML = "Red Won!";
+        document.getElementById('turn').innerHTML = "Pink Won!";
     }
     if (blueWin && !redWin){
         document.getElementById('turn').innerHTML = "Blue Won!";
@@ -365,7 +366,7 @@ function nextTurn(){
     }
     //document.getElementById("turn").innerHTML = message;
     sendUpdate();
-    updateInterval = setInterval(getUpdate,1000);
+    updateInterval = setInterval(getUpdate,500);
 }
 
 function sendUpdate(){
@@ -386,5 +387,5 @@ function getUpdate(){
 }
 
 if (currentPlayer != player){
-    updateInterval = setInterval(getUpdate,1000);
+    updateInterval = setInterval(getUpdate,500);
 }
