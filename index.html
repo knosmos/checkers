@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bottlecaps</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id=main-container>
+            <h1>Bottlecaps</h1>
+            <h2>Online Checkers Game</h2>
+            <div class='box'>
+                <h3 class=label>new game</h3>
+                <button onclick="location.href='wait.html'">Create Game</button>
+            </div>
+            <br>
+            <div class='box'>
+                <h3 class=label>join game</h3>
+                <input id="code" placeholder="Game Code">
+                <button onclick="location.href=`join.html?code=${document.getElementById('code').value}`">Join Game</button>
+            </div>
+            <br>
+            <div class='box'>
+                <h3 class=label>local</h3>
+                <button onclick="location.href='local.html'">Start Game</button>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+html,body{
+    padding:0px;
+    margin:0px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#main-container{
+    padding-left:31%;
+    padding-right:31%;
+}
+#board{
+    position: relative;
+    width: 100%;
+    padding-top:100%;
+}
+#boardImage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.checker{
+    position: absolute;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.ghost{
+    position: absolute;
+    cursor: pointer;
+}
+
+@media screen and (max-width:800px){
+    #main-container{
+        padding-left:10%;
+        padding-right:10%;        
+    }
+}
+
+/* Landing Page */
+
+.box{
+    border:2px solid rgb(185, 185, 185);
+    padding:5px;
+    text-align:center;
+    background-color:rgb(236, 236, 236);
+}
+
+button{
+    -webkit-appearance: none;
+    background-color:rgb(255, 72, 148);
+    padding:5px;
+    border:2px solid rgb(255, 72, 148);
+    font-size:20pt;
+    border-radius:15px;
+}
+
+input{
+    padding:5px;
+    font-size:20pt;
+    border:2px solid rgb(185, 185, 185);
+}
+
+h1{
+    font-size:40pt;
+    font-weight:200;
+    margin-bottom:10px;
+    margin-top:10px;
+}
+
+.label{
+    font-size:30pt;
+    color:rgb(185, 185, 185);
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+hr{
+    border:none;
+    border-bottom:2px solid rgb(185, 185, 185);
+}

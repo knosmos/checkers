@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src=sendcall.js></script>
+    </head>
+    <body>
+        <!--This page exists solely to send the game code to the server, causing it to start the game.-->
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            var code = urlParams.get('code');
+            sendPost('start',{'code':code});
+            location.href=`main.html?code=${code}&p=1`; 
+        </script>
+    </body>
+</html>

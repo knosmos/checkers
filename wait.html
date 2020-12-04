@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src=sendcall.js></script>
+        <link rel=stylesheet href=style.css>
+    </head>
+    <body>
+        <!--
+            This page is a waiting room. It generates a game code and sends it to the server,
+            then repeatedly queries the server if the other player has joined.
+        -->
+        <div id=main-container>
+            <br>
+            <div class=box>
+                <h1 id='code'></h1>
+                <h2>Waiting for other player...</h2>                 
+            </div>
+        </div>
+        <script src=wait.js></script>
+    </body>
+</html>
