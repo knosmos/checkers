@@ -231,27 +231,23 @@ function displayCaptures(id){
 function move(val,x,y){
     if (player == 0){
         if (red[val].length>2){
-            red[val] = [x,y,1]
-            document.getElementById('r_'+val).src = 'assets/red_checker_king.png';
+            red[val] = [x,y,1];
         }
         else{
             red[val] = [x,y];
             if (y == 0){
                 red[val].push(1);
-                document.getElementById('r_'+val).src = 'assets/red_checker_king.png';
             }            
         }
     }
     if (player == 1){
         if (blue[val].length>2){
-            blue[val] = [x,y,1]
-            document.getElementById('b_'+val).src = 'assets/blue_checker_king.png';
+            blue[val] = [x,y,1];
         }
         else{
             blue[val] = [x,y];
             if (y == rows-1){
                 blue[val].push(1);
-                document.getElementById('b_'+val).src = 'assets/blue_checker_king.png';
             }            
         }
     }
@@ -314,6 +310,9 @@ function updateBoard(){
     // Redraws the board.
     for (let b=0; b<blue.length; b++){
         checker = document.getElementById("b_"+b);
+        if (player === 1){
+            checker.style.transform = "rotate(180deg)";
+        }
         if (blue[b][0] === -1){
             checker.style.display='none';
             continue;
@@ -321,7 +320,9 @@ function updateBoard(){
         else{checker.style.display='block'}
         checker.style.left = `${blue[b][0]/rows*100}%`;
         checker.style.top = `${blue[b][1]/rows*100}%`;
-
+        if (blue[b].length > 2){
+            checker.src = "blue_checker_king.png";
+        }
     }
     for (let r=0; r<red.length; r++){
         checker = document.getElementById("r_"+r);
@@ -332,6 +333,9 @@ function updateBoard(){
         else{checker.style.display='block'}
         checker.style.left = `${red[r][0]/rows*100}%`;
         checker.style.top = `${red[r][1]/rows*100}%`;
+        if (red[r].length > 2){
+            checker.src = "red_checker_king.png";
+        }
     }
     checkWin();
 }
