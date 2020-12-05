@@ -321,7 +321,7 @@ function updateBoard(){
         checker.style.left = `${blue[b][0]/rows*100}%`;
         checker.style.top = `${blue[b][1]/rows*100}%`;
         if (blue[b].length > 2){
-            checker.src = "blue_checker_king.png";
+            checker.src = "assets/blue_checker_king.png";
         }
     }
     for (let r=0; r<red.length; r++){
@@ -334,7 +334,7 @@ function updateBoard(){
         checker.style.left = `${red[r][0]/rows*100}%`;
         checker.style.top = `${red[r][1]/rows*100}%`;
         if (red[r].length > 2){
-            checker.src = "red_checker_king.png";
+            checker.src = "assets/red_checker_king.png";
         }
     }
     checkWin();
