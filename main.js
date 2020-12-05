@@ -326,6 +326,9 @@ function updateBoard(){
     }
     for (let r=0; r<red.length; r++){
         checker = document.getElementById("r_"+r);
+        if (player === 1){
+            checker.style.transform = "rotate(180deg)";
+        }
         if (red[r][0] === -1){
             checker.style.display='none';
             continue;
