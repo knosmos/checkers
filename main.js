@@ -232,22 +232,26 @@ function move(val,x,y){
     if (player == 0){
         if (red[val].length>2){
             red[val] = [x,y,1]
+            document.getElementById('r_'+val).src = 'assets/red_checker_king.png';
         }
         else{
             red[val] = [x,y];
             if (y == 0){
                 red[val].push(1);
+                document.getElementById('r_'+val).src = 'assets/red_checker_king.png';
             }            
         }
     }
     if (player == 1){
         if (blue[val].length>2){
             blue[val] = [x,y,1]
+            document.getElementById('b_'+val).src = 'assets/blue_checker_king.png';
         }
         else{
             blue[val] = [x,y];
             if (y == rows-1){
                 blue[val].push(1);
+                document.getElementById('b_'+val).src = 'assets/blue_checker_king.png';
             }            
         }
     }
