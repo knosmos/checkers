@@ -57,7 +57,6 @@ function pointInArray(array,point){
 
 function getMoves(id){
     // calculates the available moves for a certain checker
-    // kings have not been implemented yet.
     let possibleMoves;
     let val = parseInt(id.split('_').pop());
     if (player === 0){
@@ -130,6 +129,7 @@ function getCaptures(id){
         if (id[0] === 'r'){
             let x = red[val][0];
             let y = red[val][1];
+            if (x == -1){ return []; } // dead
             possibleMoves = [
                 [x-2,y-2], // red moves "up"
                 [x+2,y-2]
@@ -152,6 +152,7 @@ function getCaptures(id){
         if (id[0] === 'b'){
             let x = blue[val][0];
             let y = blue[val][1];
+            if (x == -1){ return []; }
             possibleMoves = [
                 [x-2,y+2],
                 [x+2,y+2]
@@ -188,7 +189,7 @@ function getCaptures(id){
                         res.push([i,captured]);
                     }
                 }            
-            }
+            }                
         }        
     }
     console.log("captures: ",res,id)
@@ -216,22 +217,26 @@ function move(val,x,y){
     if (player == 0){
         if (red[val].length>2){
             red[val] = [x,y,1]
+            document.getElementById('r_'+val).src = 'assets/red_checker_king.png';
         }
         else{
             red[val] = [x,y];
             if (y == 0){
                 red[val].push(1);
+                document.getElementById('r_'+val).src = 'assets/red_checker_king.png';
             }            
         }
     }
     if (player == 1){
         if (blue[val].length>2){
             blue[val] = [x,y,1]
+            document.getElementById('b_'+val).src = 'assets/blue_checker_king.png';
         }
         else{
             blue[val] = [x,y];
             if (y == rows-1){
                 blue[val].push(1);
+                document.getElementById('b_'+val).src = 'assets/blue_checker_king.png';
             }            
         }
     }
