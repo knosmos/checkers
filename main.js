@@ -22,6 +22,7 @@ var player = parseInt(urlParams.get('p')); // red = 0, blue = 1
 var code = urlParams.get('code');
 
 board = document.getElementById("board");
+document.getElementById("turn").innerHTML = "pink's turn";
 
 if (player === 1){
     board.style.transform = 'rotate(180deg)'; // board is rotated for blue    
@@ -276,33 +277,36 @@ function capture(piece,val){
 }
 
 function displaySteps(id){
-    // Is it not possible for the piece that just captured capture another piece?
-    if (justCaptured==id){
-        if (getCaptures(id).length>0){
-            console.log("double jump!");
-            displayCaptures(id);
+    // Is it not possible for the piece that just captured to capture another piece?
+    if (player == currentPlayer){
+        if (justCaptured==id){
+            if (getCaptures(id).length>0){
+                console.log("double jump!");
+                displayCaptures(id);
+            }
         }
-    }
-    else if (justCaptured==-1 || getCaptures(justCaptured).length==0){
-        // Can we capture a piece?
-        if (getCaptures(id).length>0){
-            displayCaptures(id);
-        }
-        else{
-            // Is there another piece that can capture?
-            let other = false;          
-            for (let i=0;i<blue.length;i++){
-                //console.log(i);
-                if (getCaptures(prefix+i).length>0){
-                    other = true;
-                    console.log('cannot move, other piece has capture');
+        else if (justCaptured==-1 || getCaptures(justCaptured).length==0){
+            // Can we capture a piece?
+            if (getCaptures(id).length>0){
+                displayCaptures(id);
+            }
+            else{
+                // Is there another piece that can capture?
+                let other = false;          
+                for (let i=0;i<blue.length;i++){
+                    //console.log(i);
+                    if (getCaptures(prefix+i).length>0){
+                        other = true;
+                        console.log('cannot move, other piece has capture');
+                        document.getElementById('turn').innerHTML = 'cannot move, other piece has capture';
+                    }
                 }
-            }
-            if (!other){
-                // Otherwise, we can move our piece.
-                displayMoves(id);  
-            }
-        }        
+                if (!other){
+                    // Otherwise, we can move our piece.
+                    displayMoves(id);  
+                }
+            }        
+        }
     }
 }
 
@@ -376,7 +380,7 @@ function nextTurn(){
         currentPlayer = 0;
         message = "pink's turn";
     }
-    //document.getElementById("turn").innerHTML = message;
+    document.getElementById("turn").innerHTML = message;
     sendUpdate();
     updateInterval = setInterval(getUpdate,500);
 }
