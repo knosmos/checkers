@@ -22,7 +22,7 @@ var player = parseInt(urlParams.get('p')); // red = 0, blue = 1
 var code = urlParams.get('code');
 
 board = document.getElementById("board");
-document.getElementById("turn").innerHTML = "pink's turn";
+//document.getElementById("turn").innerHTML = "pink's turn";
 
 if (player === 1){
     board.style.transform = 'rotate(180deg)'; // board is rotated for blue    
@@ -380,7 +380,7 @@ function nextTurn(){
         currentPlayer = 0;
         message = "pink's turn";
     }
-    document.getElementById("turn").innerHTML = message;
+    //document.getElementById("turn").innerHTML = message;
     sendUpdate();
     updateInterval = setInterval(getUpdate,500);
 }
