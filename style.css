@@ -39,24 +39,35 @@ html,body{
 
 .box{
     border:2px solid rgb(185, 185, 185);
-    padding:5px;
+    padding:10px;
     text-align:center;
     background-color:rgb(236, 236, 236);
+    border-radius: 10px;
 }
 
 button{
     -webkit-appearance: none;
     background-color:rgb(255, 72, 148);
-    padding:5px;
-    border:2px solid rgb(255, 72, 148);
-    font-size:20pt;
-    border-radius:15px;
+    padding:10px;
+    border:2px solid rgb(213, 61, 124);
+    border-radius:10px;
+    font-size:15pt;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor:pointer;
+    color:white;
+    transition:0.1s background-color;
+}
+
+button:hover {
+    background-color:rgb(213, 61, 124);
 }
 
 input{
-    padding:5px;
-    font-size:20pt;
+    padding:10px;
+    font-size:15pt;
     border:2px solid rgb(185, 185, 185);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius:10px;
 }
 
 h1{
