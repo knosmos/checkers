@@ -1,5 +1,5 @@
 // sends a request to server and returns the result.
-server_url = 'http://192.168.1.21:5000/';
+server_url = 'https://checkers-itrb.onrender.com/';
 
 /*function sendPost(url,data){
     return fetch(server_url+url, {method: "POST", body: JSON.stringify(data)});
