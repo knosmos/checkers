@@ -83,4 +83,5 @@ def sendUpdate():
     data = pickle.load(open(code+'.p','rb'))
     return str(data).replace("'",'"')
 
-app.run('0.0.0.0')
+if __name__ == '__main__':
+    app.run('0.0.0.0')
