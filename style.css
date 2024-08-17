@@ -1,7 +1,12 @@
+@font-face {
+    font-family: SpaceGrotesk;
+    src: url('assets/SpaceGrotesk-Regular.ttf');
+}
 html,body{
     padding:0px;
     margin:0px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:SpaceGrotesk, Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(252, 252, 252);
 }
 #main-container{
     padding-left:31%;
@@ -11,17 +16,23 @@ html,body{
     position: relative;
     width: 100%;
     padding-top:100%;
+    border: 2px solid rgb(185, 185, 185);
+    box-shadow: 0px 0px 20px 0px rgb(236, 236, 236);
+    border-radius: 10px;
+    overflow: hidden;
 }
 #boardImage{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    border-radius: 8px;
 }
 .checker{
     position: absolute;
     transition: all 0.5s;
     cursor: pointer;
+    filter: drop-shadow(0px 0px 10px rgb(161, 161, 161));
 }
 .ghost{
     position: absolute;
@@ -39,6 +50,7 @@ html,body{
 
 .box{
     border:2px solid rgb(185, 185, 185);
+    box-shadow: 0px 0px 20px 0px rgb(236, 236, 236);
     padding:10px;
     text-align:center;
     background-color:rgb(236, 236, 236);
@@ -52,10 +64,11 @@ button{
     border:2px solid rgb(213, 61, 124);
     border-radius:10px;
     font-size:15pt;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:SpaceGrotesk, Tahoma, Geneva, Verdana, sans-serif;
     cursor:pointer;
     color:white;
     transition:0.1s background-color;
+    box-shadow: 0px 0px 20px 0px rgb(190, 190, 190);
 }
 
 button:hover {
@@ -66,22 +79,23 @@ input{
     padding:10px;
     font-size:15pt;
     border:2px solid rgb(185, 185, 185);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:SpaceGrotesk, Tahoma, Geneva, Verdana, sans-serif;
     border-radius:10px;
 }
 
 h1{
     font-size:40pt;
-    font-weight:200;
     margin-bottom:10px;
     margin-top:10px;
+    color: rgb(17, 23, 51);
 }
 
 .label{
     font-size:30pt;
-    color:rgb(185, 185, 185);
+    color:rgb(126, 126, 126);
     margin-top:10px;
     margin-bottom:10px;
+    font-weight:200;
 }
 
 hr{

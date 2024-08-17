@@ -370,17 +370,16 @@ function checkWin(){
 
 let updateInterval;
 
+document.getElementById("turn").innerHTML = "pink's turn";
+
 function nextTurn(){
     let message;
     if (player === 0){
         currentPlayer = 1;
-        message = "blue's turn";
     }
     else if (player === 1){
         currentPlayer = 0;
-        message = "pink's turn";
     }
-    //document.getElementById("turn").innerHTML = message;
     sendUpdate();
     updateInterval = setInterval(getUpdate,500);
 }
@@ -397,6 +396,14 @@ function getUpdate(){
     red = data["0"];
     blue = data["1"];
     updateBoard();
+    let message;
+    if (currentPlayer === 0){
+        message = "pink's turn";
+    }
+    else if (currentPlayer === 1){
+        message = "blue's turn";
+    }
+    document.getElementById("turn").innerHTML = message;
     if (currentPlayer == player){
         clearInterval(updateInterval);
     }
