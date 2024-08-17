@@ -395,7 +395,6 @@ function getUpdate(){
     currentPlayer = data["player"];
     red = data["0"];
     blue = data["1"];
-    updateBoard();
     let message;
     if (currentPlayer === 0){
         message = "pink's turn";
@@ -404,6 +403,7 @@ function getUpdate(){
         message = "blue's turn";
     }
     document.getElementById("turn").innerHTML = message;
+    updateBoard();
     if (currentPlayer == player){
         clearInterval(updateInterval);
     }
